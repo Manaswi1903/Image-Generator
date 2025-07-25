@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Image Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.loading::before {
+      content: "Loading...";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 20px 40px;
+      border-radius: 10px;
+      z-index: 1000;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Advanced Image Generator</h1>
+      <p>Generate, customize, and download images with filters and upload</p>
+      <nav>
+        <ul>
+          <li><a href="#input-section">URL Input</a></li>
+          <li><a href="#upload-section">Upload</a></li>
+          <li><a href="#preview">Preview</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="input-section" id="input-section">
+      <label for="imageUrl">Image URL:</label>
+      <input type="text" id="imageUrl" placeholder="Enter image URL here..." />
+      <button id="loadImageBtn">Load Image</button>
+    </section>
+
+    <section class="upload-section" id="upload-section">
+      <label for="uploadInput">Or Upload an Image:</label>
+      <input type="file" id="uploadInput" accept="image/*" />
+    </section>
+
+    <section class="filter-section">
+      <label for="filterSelect">Choose a Filter:</label>
+      <select id="filterSelect">
+        <option value="none">None</option>
+        <option value="grayscale(100%)">Grayscale</option>
+        <option value="sepia(100%)">Sepia</option>
+        <option value="invert(100%)">Invert</option>
+        <option value="brightness(150%)">Brightness</option>
+        <option value="contrast(200%)">Contrast</option>
+        <option value="blur(5px)">Blur</option>
+        <option value="hue-rotate(90deg)">Hue Rotate</option>
+        <option value="saturate(300%)">Saturate</option>
+      </select>
+    </section>
+
+    <section class="image-preview" id="imagePreview">
+      <p>No image loaded yet</p>
+    </section>
+
+    <section class="controls">
+      <label for="rotateRange">Rotate Image:</label>
+      <input type="range" id="rotateRange" min="0" max="360" value="0">
+
+      <label for="scaleRange">Scale Image:</label>
+      <input type="range" id="scaleRange" min="0.5" max="2" step="0.1" value="1">
+    </section>
+
+    <section class="actions">
+      <button id="downloadBtn">Download Image</button>
+      <button id="resetBtn">Reset</button>
+      <button id="toggleThemeBtn">Toggle Theme</button>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Image Generator App. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>
